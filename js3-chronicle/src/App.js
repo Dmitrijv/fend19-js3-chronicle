@@ -1,14 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Route, Switch } from "react-router-dom";
+import LayoutSimple from "./pages/LayoutSimple";
 
-import "./bootstrap-herotheme.css";
 import "./App.css";
+import "./bootstrap-herotheme.css";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Hello world!</h1>
+        <LayoutSimple />
       </header>
     </div>
   );
