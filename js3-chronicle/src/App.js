@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import LayoutSimple from "./pages/LayoutSimple";
 
-import "./App.css";
-import "./bootstrap-herotheme.css";
+import "./css/bootstrap-hero.min.css";
+import "./scss/App.scss";
 
 function App() {
   return (
