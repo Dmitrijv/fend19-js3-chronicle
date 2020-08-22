@@ -4,9 +4,9 @@ export default function AboutPage() {
   return (
     <div className="about-section">
       <h6>Dmitrij Velström, Nackademin</h6>
-      <h7>
+      <h6>
         <time>2020-08-22</time>
-      </h7>
+      </h6>
       <br />
       <br />
       <p>
