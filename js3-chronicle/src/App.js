@@ -11,6 +11,7 @@ import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import StatesMenuList from "./components/StatesMenuList";
 import StateNewspapersTable from "./components/StateNewspapersTable";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   const [newspaperList, setNewspaperList] = useState({});
@@ -41,6 +42,17 @@ function App() {
                 <LayoutSimple
                   sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
                   mainContent={<StateNewspapersTable {...props} newspaperList={newspaperList} />}
+                />
+              );
+            }}
+          ></Route>
+          <Route
+            path="/search/:searchParameter"
+            render={(props) => {
+              return (
+                <LayoutSimple
+                  sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
+                  mainContent={<SearchPage {...props} newspaperList={newspaperList} />}
                 />
               );
             }}
