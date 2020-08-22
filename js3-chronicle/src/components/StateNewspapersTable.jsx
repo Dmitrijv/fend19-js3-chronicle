@@ -5,6 +5,7 @@ export default function StateNewspapersTable(props) {
   const relevantNewspapers = props.newspaperList.filter
     ? props.newspaperList.filter(newspaper => newspaper.state === selectedStateName)
     : [];
+
   return (
     <div>
       <h5>
@@ -14,7 +15,7 @@ export default function StateNewspapersTable(props) {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>lccn</th>
+              <th>LCCN number</th>
               <th>Title</th>
             </tr>
           </thead>
