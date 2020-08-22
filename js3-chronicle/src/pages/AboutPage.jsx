@@ -8,7 +8,6 @@ export default function AboutPage() {
         <time>2020-08-22</time>
       </h6>
       <br />
-      <br />
       <p>
         Welcome to USA Chronicles, a React app that displays data from a newspaper archive{" "}
         <a href="https://chroniclingamerica.loc.gov/about/api/#linked-data">chroniclingamerica.loc.gov</a>.
