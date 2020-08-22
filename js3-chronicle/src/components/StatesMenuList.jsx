@@ -1,53 +1,36 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function StatesMenuList({ newspaperList }) {
+  //   console.log(typeof newspaperList);
+  //   console.log(newspaperList);
+  // map over all newspapers and build a dictionary of unique states with occurance counts as values
+
+  let stateOccurrenceStats = newspaperList.reduce
+    ? newspaperList.reduce((stats, newspaper) => {
+        const stateName = newspaper.state;
+        stats[stateName] = (stats[stateName] || 0) + 1;
+        return stats;
+      }, {})
+    : [];
+
+  console.log(stateOccurrenceStats);
+
   return (
     <ul className="nav flex-column">
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          Alabama
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link active" href="#">
-          Alaska
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          Arizona
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          Arkansas
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          California
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          Colorado
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          Connecticut
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          Delaware
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="#">
-          Florida
-        </a>
-      </li>
+      {Object.keys(stateOccurrenceStats).map(stateName => {
+        const newspaperCount = stateOccurrenceStats[stateName];
+        return (
+          <Link to={`/states/${stateName}`}>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                {stateName}{" "}
+                <span className="badge badge-primary badge-pill bg-dark text-white"> {newspaperCount} </span>
+              </a>
+            </li>
+          </Link>
+        );
+      })}
     </ul>
   );
 }
