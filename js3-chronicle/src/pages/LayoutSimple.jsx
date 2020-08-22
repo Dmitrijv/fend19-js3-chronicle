@@ -1,23 +1,23 @@
-import React from "react";
+import React, { Children } from "react";
 import SearchHeaderBar from "../components/SearchHeaderBar";
-import StateSelectionSidebar from "../components/StateSelectionSidebar";
+import SidebarNav from "../components/SidebarNav";
 
-export default function LayoutSimple({ children }) {
+export default function LayoutSimple({ sidebarContent, mainContent }) {
   return (
     <div>
-      <header>
+      <section>
         <SearchHeaderBar />
-      </header>
-      <body>
-        <div class="container-fluid">
-          <div class="row">
-            <StateSelectionSidebar />
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-              {children}
+      </section>
+      <section>
+        <div className="container-fluid">
+          <div className="row">
+            <SidebarNav sidebarContent={sidebarContent}></SidebarNav>
+            <main role="main" className="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+              {mainContent}
             </main>
           </div>
         </div>
-      </body>
+      </section>
     </div>
   );
 }

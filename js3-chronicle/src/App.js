@@ -7,6 +7,7 @@ import "./scss/App.scss";
 import { Route, Switch } from "react-router-dom";
 import LayoutSimple from "./pages/LayoutSimple";
 import AboutSection from "./components/AboutSection";
+import StatesMenuList from "./components/StatesMenuList";
 import StateNewspapers from "./components/StateNewspapers";
 
 function App() {
@@ -14,15 +15,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Switch>
-          <Route path="/state">
-            <LayoutSimple>
-              <StateNewspapers></StateNewspapers>
-            </LayoutSimple>
+          <Route path={["/about"]}>
+            <LayoutSimple mainContent={<AboutSection />} />
           </Route>
-          <Route path={["/about", "/home", "/"]}>
-            <LayoutSimple>
-              <AboutSection />
-            </LayoutSimple>
+          <Route path={["/state", "/"]}>
+            <LayoutSimple sidebarContent={<StatesMenuList />} mainContent={<StateNewspapers />} />
           </Route>
         </Switch>
       </header>

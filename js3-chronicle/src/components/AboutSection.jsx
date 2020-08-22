@@ -2,8 +2,8 @@ import React from "react";
 
 export default function AboutSection() {
   return (
-    <section className="container p-3 my-3 float-left">
-      <h3>Javascript 3 - USA Chronicles</h3>
+    <section className="float-left about-section">
+      <h4>Javascript 3 - USA Chronicles</h4>
       <br />
       <h5>Dmitrij Velström, Nackademin</h5>
       <h6>2020-08-22</h6>

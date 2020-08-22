@@ -1,11 +1,11 @@
 import React from "react";
 
-export default function StateNewspapers({ stateName }) {
+export default function StateNewspapers({ stateName, newspaperList }) {
   return (
     <div>
       <h2>Newspapers for Wisconsin</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
+      <div className="table-responsive">
+        <table className="table table-striped table-sm">
           <thead>
             <tr>
               <th>lccn</th>
