@@ -32,10 +32,10 @@ export default function StatesMenuList({ newspaperList = [] }) {
       {Object.keys(stateOccurrenceStats).map((stateName) => {
         const newspaperCount = stateOccurrenceStats[stateName];
         return (
-          <Link to={`/state/${stateName}`}>
+          <Link key={stateName} to={`/state/${stateName}`}>
             <li
-              className="nav-item nav-link list-group-item d-flex justify-content-between align-items-center"
               key={stateName}
+              className="nav-item nav-link list-group-item d-flex justify-content-between align-items-center"
               onClick={updateActiveNavItem}
             >
               {stateName}
