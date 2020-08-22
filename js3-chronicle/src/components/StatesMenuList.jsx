@@ -21,7 +21,7 @@ export default function StatesMenuList({ newspaperList }) {
       {Object.keys(stateOccurrenceStats).map(stateName => {
         const newspaperCount = stateOccurrenceStats[stateName];
         return (
-          <Link to={`/states/${stateName}`}>
+          <Link to={`/state/${stateName}`}>
             <li className="nav-item">
               <a className="nav-link" href="#">
                 {stateName}{" "}

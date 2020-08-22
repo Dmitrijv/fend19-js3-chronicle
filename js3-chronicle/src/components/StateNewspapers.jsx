@@ -3,7 +3,7 @@ import React from "react";
 export default function StateNewspapers({ stateName, newspaperList }) {
   return (
     <div>
-      <h2>Newspapers for Wisconsin</h2>
+      <h2>Newspapers in Wisconsin</h2>
       <div className="table-responsive">
         <table className="table table-striped table-sm">
           <thead>
