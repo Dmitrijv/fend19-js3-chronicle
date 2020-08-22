@@ -3,7 +3,7 @@ import React from "react";
 export default function StateNewspapersTable(props) {
   const selectedStateName = props.match.params.stateName;
   const relevantNewspapers = props.newspaperList.filter
-    ? props.newspaperList.filter(newspaper => newspaper.state === selectedStateName)
+    ? props.newspaperList.filter((newspaper) => newspaper.state === selectedStateName)
     : [];
 
   return (
@@ -20,10 +20,10 @@ export default function StateNewspapersTable(props) {
             </tr>
           </thead>
           <tbody>
-            {relevantNewspapers.map(newspaper => {
+            {relevantNewspapers.map((newspaper) => {
               const sanitizedNewspaperTitle = newspaper.title.replace(" [volume]", "");
               return (
-                <tr>
+                <tr key={newspaper.lccn}>
                   <td>{newspaper.lccn}</td>
                   <td>{sanitizedNewspaperTitle}</td>
                 </tr>
