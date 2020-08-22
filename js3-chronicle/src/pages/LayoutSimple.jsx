@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import SearchHeaderBar from "../components/SearchHeaderBar";
 import SidebarNav from "../components/SidebarNav";
 
