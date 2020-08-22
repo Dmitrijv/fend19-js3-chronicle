@@ -31,7 +31,13 @@ function App() {
       <header className="App-header">
         <Switch>
           <Route path={["/about"]}>
-            <LayoutSimple sidebarContent={<StatesMenuList newspaperList={[]} />} mainContent={<AboutSection />} />
+            <LayoutSimple sidebarContent={<StatesMenuList />} mainContent={<AboutSection />} />
+          </Route>
+          <Route path={["/state"]}>
+            <LayoutSimple
+              sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
+              mainContent={<StateNewspapers />}
+            />
           </Route>
           <Route path={["/state", "/"]}>
             <LayoutSimple

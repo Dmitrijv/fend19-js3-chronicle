@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function StatesMenuList({ newspaperList }) {
+export default function StatesMenuList({ newspaperList = [] }) {
   //   console.log(typeof newspaperList);
   //   console.log(newspaperList);
   // map over all newspapers and build a dictionary of unique states with occurance counts as values
