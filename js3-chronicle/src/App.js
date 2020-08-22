@@ -7,10 +7,10 @@ import "./css/dashboard.css";
 import "./scss/App.scss";
 
 import LayoutSimple from "./pages/LayoutSimple";
-import AboutSection from "./components/AboutSection";
+import AboutPage from "./pages/AboutPage";
+import HomePage from "./pages/HomePage";
 import StatesMenuList from "./components/StatesMenuList";
 import StateNewspapersTable from "./components/StateNewspapersTable";
-import HomePage from "./pages/HomePage";
 
 function App() {
   const [newspaperList, setNewspaperList] = useState({});
@@ -32,7 +32,7 @@ function App() {
       <header className="App-header">
         <Switch>
           <Route path={["/about"]}>
-            <LayoutSimple sidebarContent={<StatesMenuList />} mainContent={<AboutSection />} />
+            <LayoutSimple sidebarContent={<StatesMenuList />} mainContent={<AboutPage />} />
           </Route>
           <Route
             path="/state/:stateName"

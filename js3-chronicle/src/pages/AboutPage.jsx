@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function AboutSection() {
+export default function AboutPage() {
   return (
     <div className="about-section">
       <h6>Dmitrij Velström, Nackademin</h6>

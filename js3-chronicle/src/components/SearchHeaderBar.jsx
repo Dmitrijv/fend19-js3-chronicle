@@ -5,7 +5,7 @@ export default function SearchHeaderBar() {
   return (
     <nav className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <Link className="navbar-brand col-sm-3 col-md-2 mr-0" to={`/home`}>
-        <div>USA Chronicles</div>
+        <div>USA Chronicle</div>
       </Link>
       <input
         className="form-control form-control-dark w-100"
