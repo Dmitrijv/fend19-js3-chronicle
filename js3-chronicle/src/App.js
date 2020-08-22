@@ -2,7 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import LayoutSimple from "./pages/LayoutSimple";
 
-import "./css/bootstrap-hero.min.css";
+import "./css/bootstrap.min.css";
+import "./css/dashboard.css";
 import "./scss/App.scss";
 
 function App() {
