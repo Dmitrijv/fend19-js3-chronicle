@@ -10,15 +10,15 @@ import LayoutSimple from "./pages/LayoutSimple";
 import AboutSection from "./components/AboutSection";
 import StatesMenuList from "./components/StatesMenuList";
 import StateNewspapersTable from "./components/StateNewspapersTable";
-import AboutStateMenuPage from "./pages/AboutStateMenuPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const [newspaperList, setNewspaperList] = useState({});
 
   function fetchNewspaperList() {
     fetch("https://chroniclingamerica.loc.gov/newspapers.json")
-      .then(res => res.json())
-      .then(result => {
+      .then((res) => res.json())
+      .then((result) => {
         setNewspaperList(result.newspapers);
       });
   }
@@ -36,7 +36,7 @@ function App() {
           </Route>
           <Route
             path="/state/:stateName"
-            render={props => {
+            render={(props) => {
               return (
                 <LayoutSimple
                   sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
@@ -45,10 +45,10 @@ function App() {
               );
             }}
           ></Route>
-          <Route path={["/state", "/"]}>
+          <Route path={["/home", "/"]}>
             <LayoutSimple
               sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
-              mainContent={<AboutStateMenuPage />}
+              mainContent={<HomePage newspaperList={newspaperList} />}
             />
           </Route>
         </Switch>

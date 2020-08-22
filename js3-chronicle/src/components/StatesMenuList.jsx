@@ -20,7 +20,7 @@ export default function StatesMenuList({ newspaperList = [] }) {
     const thisItem = event.currentTarget;
     // remove active class from currently clicked menu item
     // should only be 1 but for sanity search for all possible
-    [].forEach.call(document.querySelectorAll("li.nav-item.active"), function(item) {
+    [].forEach.call(document.querySelectorAll("nav.sidebar li.nav-item.active"), function (item) {
       item.classList.remove("active");
     });
     // add active class to clicked menu item
@@ -29,7 +29,7 @@ export default function StatesMenuList({ newspaperList = [] }) {
 
   return (
     <ul className="nav flex-column">
-      {Object.keys(stateOccurrenceStats).map(stateName => {
+      {Object.keys(stateOccurrenceStats).map((stateName) => {
         const newspaperCount = stateOccurrenceStats[stateName];
         return (
           <Link to={`/state/${stateName}`}>
