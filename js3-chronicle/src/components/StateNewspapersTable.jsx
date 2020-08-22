@@ -11,7 +11,7 @@ export default function StateNewspapersTable(props) {
         {relevantNewspapers.length} newspapers in the state of {selectedStateName}
       </h5>
       <div className="table-responsive">
-        <table className="table table-striped table-sm">
+        <table className="table table-striped">
           <thead>
             <tr>
               <th>lccn</th>
@@ -20,10 +20,11 @@ export default function StateNewspapersTable(props) {
           </thead>
           <tbody>
             {relevantNewspapers.map(newspaper => {
+              const sanitizedNewspaperTitle = newspaper.title.replace(" [volume]", "");
               return (
                 <tr>
                   <td>{newspaper.lccn}</td>
-                  <td>{newspaper.title}</td>
+                  <td>{sanitizedNewspaperTitle}</td>
                 </tr>
               );
             })}

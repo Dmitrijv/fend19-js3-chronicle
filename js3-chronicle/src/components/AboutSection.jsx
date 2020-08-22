@@ -2,11 +2,12 @@ import React from "react";
 
 export default function AboutSection() {
   return (
-    <section className="about-section">
-      <h5>Dmitrij Velström, Nackademin</h5>
-      <h6>
+    <div className="about-section">
+      <h6>Dmitrij Velström, Nackademin</h6>
+      <h7>
         <time>2020-08-22</time>
-      </h6>
+      </h7>
+      <br />
       <br />
       <p>
         Welcome to USA Chronicles, a React app that displays data from a newspaper archive{" "}
@@ -19,6 +20,6 @@ export default function AboutSection() {
         debitis dolor libero officia vel. Doloremque, accusamus cumque.
       </p>
       <p>Woop woop!</p>
-    </section>
+    </div>
   );
 }
