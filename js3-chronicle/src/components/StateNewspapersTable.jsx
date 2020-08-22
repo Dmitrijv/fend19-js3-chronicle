@@ -1,6 +1,9 @@
 import React from "react";
 
-export default function StateNewspapers({ stateName, newspaperList }) {
+export default function StateNewspapersTable(props) {
+  const stateName = props.match.params.stateName;
+  console.log(stateName);
+  console.log(props.newspaperList);
   return (
     <div>
       <h2>Newspapers in Wisconsin</h2>

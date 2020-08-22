@@ -5,3 +5,10 @@
 section.about-section {
   max-width: 800px;
 }
+
+div.sidebar-sticky {
+  li.nav-item:hover,
+  li.nav-item.active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}

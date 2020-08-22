@@ -9,7 +9,8 @@ import "./scss/App.scss";
 import LayoutSimple from "./pages/LayoutSimple";
 import AboutSection from "./components/AboutSection";
 import StatesMenuList from "./components/StatesMenuList";
-import StateNewspapers from "./components/StateNewspapers";
+import StateNewspapersTable from "./components/StateNewspapersTable";
+import AboutStateMenuPage from "./pages/AboutStateMenuPage";
 
 function App() {
   const [newspaperList, setNewspaperList] = useState({});
@@ -33,16 +34,21 @@ function App() {
           <Route path={["/about"]}>
             <LayoutSimple sidebarContent={<StatesMenuList />} mainContent={<AboutSection />} />
           </Route>
-          <Route path={["/state"]}>
-            <LayoutSimple
-              sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
-              mainContent={<StateNewspapers />}
-            />
-          </Route>
+          <Route
+            path="/state/:stateName"
+            render={props => {
+              return (
+                <LayoutSimple
+                  sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
+                  mainContent={<StateNewspapersTable {...props} newspaperList={newspaperList} />}
+                />
+              );
+            }}
+          ></Route>
           <Route path={["/state", "/"]}>
             <LayoutSimple
               sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
-              mainContent={<StateNewspapers />}
+              mainContent={<AboutStateMenuPage />}
             />
           </Route>
         </Switch>
