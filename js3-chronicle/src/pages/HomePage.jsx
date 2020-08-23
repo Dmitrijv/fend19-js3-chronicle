@@ -18,7 +18,7 @@ export default function HomePage({ newspaperList = [] }) {
   return (
     <div className="about-section">
       <h5>
-        Database contains {newspaperList.length} newspapers across {Object.keys(stateOccurrenceStats).length} states
+        API provides {newspaperList.length} newspaper records across {Object.keys(stateOccurrenceStats).length} states
       </h5>
       <p>
         Data is pulled from{" "}
