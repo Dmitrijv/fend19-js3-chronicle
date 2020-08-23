@@ -6,7 +6,6 @@ export default function LayoutSimple({ sidebarContent, mainContent }) {
   return (
     <div>
       <SearchHeaderBar />
-
       <div className="container-fluid">
         <div className="row">
           <SidebarNav sidebarContent={sidebarContent}></SidebarNav>

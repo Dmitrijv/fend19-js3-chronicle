@@ -2,7 +2,7 @@ import React from "react";
 
 export default function HomePage({ newspaperList = [] }) {
   // clear selected usa state if any exist
-  [].forEach.call(document.querySelectorAll("nav.sidebar li.nav-item.active"), function (item) {
+  [].forEach.call(document.querySelectorAll("nav.sidebar li.nav-item.active"), function(item) {
     item.classList.remove("active");
   });
 

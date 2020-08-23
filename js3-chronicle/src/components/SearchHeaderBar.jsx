@@ -1,14 +1,16 @@
 import React from "react";
-
-import { Router, Link, navigate } from "@reach/router";
+import { Link } from "react-router-dom";
+import { navigate } from "@reach/router";
 
 export default function SearchHeaderBar() {
+  //   console.log(navigation);
   function onSearchbarKeyPress(event) {
     if (event.charCode === 13) {
-      // window.location.href = `/search/${event.currentTarget.value}`;
-      // navigate(`/search/${event.currentTarget.value}`);
-      // history.push(`/search/${event.currentTarget.value}`);
-      // navigate(`/about`);
+      //   window.location.href = `/search/${event.currentTarget.value}`;
+      navigate(`/search/${event.currentTarget.value}`);
+      //   navigateByUrl(`/search/${event.currentTarget.value}`);
+      //   history.push(`/search/${event.currentTarget.value}`);
+      //adaw
     }
   }
 
@@ -17,6 +19,7 @@ export default function SearchHeaderBar() {
       <Link className="navbar-brand col-sm-3 col-md-2 mr-0" to={`/home`}>
         <div>USA Chronicle</div>
       </Link>
+
       <input
         className="form-control form-control-dark w-100"
         type="text"
@@ -24,6 +27,7 @@ export default function SearchHeaderBar() {
         aria-label="Search"
         onKeyPress={onSearchbarKeyPress}
       />
+
       <ul className="navbar-nav px-3">
         <li className="nav-item text-nowrap">
           <Link className="nav-link" to={`/about`}>

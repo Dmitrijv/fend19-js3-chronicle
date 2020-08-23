@@ -18,8 +18,8 @@ function App() {
 
   function fetchNewspaperList() {
     fetch("https://chroniclingamerica.loc.gov/newspapers.json")
-      .then((res) => res.json())
-      .then((result) => {
+      .then(res => res.json())
+      .then(result => {
         setNewspaperList(result.newspapers);
       });
   }
@@ -32,12 +32,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Switch>
-          <Route path={["/about"]}>
-            <LayoutSimple sidebarContent={<StatesMenuList />} mainContent={<AboutPage />} />
-          </Route>
           <Route
             path="/state/:stateName"
-            render={(props) => {
+            render={props => {
               return (
                 <LayoutSimple
                   sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
@@ -47,8 +44,9 @@ function App() {
             }}
           ></Route>
           <Route
-            path="/search/:searchParameter"
-            render={(props) => {
+            path={["/search/:searchParameter", "/search"]}
+            render={props => {
+              console.log("we are goin search boys");
               return (
                 <LayoutSimple
                   sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
@@ -57,7 +55,10 @@ function App() {
               );
             }}
           ></Route>
-          <Route path={["/home", "/"]}>
+          <Route exact path={"/about"}>
+            <LayoutSimple sidebarContent={<StatesMenuList />} mainContent={<AboutPage />} />
+          </Route>
+          <Route exact path={["/home", "/"]}>
             <LayoutSimple
               sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
               mainContent={<HomePage newspaperList={newspaperList} />}
