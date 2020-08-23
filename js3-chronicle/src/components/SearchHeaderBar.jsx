@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { navigate } from "@reach/router";
+import { navigate, useNavigate } from "@reach/router";
+import SearchPage from "./../pages/SearchPage";
 
 export default function SearchHeaderBar() {
-  //   console.log(navigation);
+  const [searchFilter, setSearchFilter] = useState("");
+  useEffect(() => {
+    console.log("useEffect in SearchHeaderBar");
+    console.log(searchFilter);
+    navigate(`/search/${searchFilter}`, { state: { searchFilter: searchFilter } });
+  }, []);
+
   function onSearchbarKeyPress(event) {
     if (event.charCode === 13) {
       //   window.location.href = `/search/${event.currentTarget.value}`;
-      navigate(`/search/${event.currentTarget.value}`);
+      console.log(event.currentTarget.value);
+      setSearchFilter(event.currentTarget.value);
+      navigate(`/search/${event.currentTarget.value}`, { replace: true });
       //   navigateByUrl(`/search/${event.currentTarget.value}`);
       //   history.push(`/search/${event.currentTarget.value}`);
       //adaw

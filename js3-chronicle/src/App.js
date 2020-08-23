@@ -44,9 +44,8 @@ function App() {
             }}
           ></Route>
           <Route
-            path={["/search/:searchParameter", "/search"]}
+            path={["/search/:searchFilter", "/search"]}
             render={props => {
-              console.log("we are goin search boys");
               return (
                 <LayoutSimple
                   sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
