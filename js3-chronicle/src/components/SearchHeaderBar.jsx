@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 
-export default function SearchHeaderBar(props) {
+export default function SearchHeaderBar() {
   const history = useHistory();
 
   function onSearchbarKeyPress(event) {

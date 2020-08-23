@@ -12,7 +12,7 @@ import LayoutSimple from "./pages/LayoutSimple";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import StatesMenuList from "./components/StatesMenuList";
-import StateNewspapersTable from "./components/StateNewspapersTable";
+import StateNewspapersPage from "./pages/StateNewspapersPage";
 import SearchPage from "./pages/SearchPage";
 import NewspaperPage from "./pages/NewspaperPage";
 import NewspaperIssuePage from "./pages/NewspaperIssuePage";
@@ -64,7 +64,7 @@ function App() {
               return (
                 <LayoutSimple
                   sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
-                  mainContent={<StateNewspapersTable {...props} newspaperList={newspaperList} />}
+                  mainContent={<StateNewspapersPage {...props} newspaperList={newspaperList} />}
                 />
               );
             }}
