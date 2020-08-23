@@ -9,6 +9,12 @@ export default function NewspaperPageList({ pageList = [] }) {
     700: 3,
     500: 3
   };
+
+  pageList.map((page, index) => {
+    const pageNumber = index + 1;
+    return <NewspaperPageCard key={pageNumber} pageNumber={pageNumber} />;
+  });
+
   return (
     <div>
       <Masonry
@@ -18,7 +24,7 @@ export default function NewspaperPageList({ pageList = [] }) {
       >
         {pageList.map((page, index) => {
           const pageNumber = index + 1;
-          return <NewspaperPageCard key={pageNumber} pageNumber={pageNumber} />;
+          return <NewspaperPageCard key={pageNumber} pageDataUrl={page.url} pageNumber={pageNumber} />;
         })}
       </Masonry>
 
