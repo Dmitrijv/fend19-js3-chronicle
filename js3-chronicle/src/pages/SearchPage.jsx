@@ -1,9 +1,11 @@
 import React from "react";
 import NewspapersTable from "./../components/NewspapersTable";
+
 const MIN_SEARCH_FILTER_LENGTH = 3;
 
 export default function SearchPage(props) {
-  const searchFilter = props.match.params.searchFilter.toLowerCase();
+  const searchFilter =
+    props.match.params.searchFilter !== undefined ? props.match.params.searchFilter.toLowerCase() : "";
   const searchResultList = props.newspaperList.filter
     ? props.newspaperList.filter(newspaper => newspaper.title.toLowerCase().includes(searchFilter))
     : [];
