@@ -16,19 +16,22 @@ export default function StateNewspapersTable(props) {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>lccn</th>
+              <th>#</th>
               <th>Title</th>
+              <th>lccn</th>
             </tr>
           </thead>
           <tbody>
-            {relevantNewspapers.map(newspaper => {
+            {relevantNewspapers.map((newspaper, index) => {
               const sanitizedNewspaperTitle = newspaper.title.replace(" [volume]", "");
+              index++;
               return (
                 <tr key={newspaper.lccn}>
+                  <td>{index}</td>
+                  <td>{sanitizedNewspaperTitle}</td>
                   <td>
                     <Link to={`/newspaper/${newspaper.lccn}`}>{newspaper.lccn}</Link>
                   </td>
-                  <td>{sanitizedNewspaperTitle}</td>
                 </tr>
               );
             })}
