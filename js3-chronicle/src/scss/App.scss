@@ -56,6 +56,10 @@ table.table-striped tbody tr:hover {
   //   text-decoration-color: lightgray;
 }
 
-.newspaper-page-card h5.card-title {
-  margin: 0;
+.newspaper-page-card {
+  //   max-width: 175px;
+  //   max-height: 200px;
+  h5.card-title {
+    margin: 0;
+  }
 }
