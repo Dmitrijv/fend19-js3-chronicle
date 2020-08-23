@@ -10,7 +10,7 @@ body {
   padding-top: 3rem;
 }
 
-div.about-section {
+.about-section {
   max-width: 800px;
 }
 
@@ -44,4 +44,8 @@ nav.sidebar div.sidebar-sticky .list-group-item {
   border-width: 0 0 1px 0;
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 0;
+}
+
+.notice-container {
+  margin-bottom: 30px;
 }

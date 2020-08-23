@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 
 import "./css/bootstrap.min.css";
 import "./css/dashboard.css";
+import "./css/notice.css";
 import "./scss/App.scss";
 
 import LayoutSimple from "./pages/LayoutSimple";
@@ -12,6 +13,7 @@ import HomePage from "./pages/HomePage";
 import StatesMenuList from "./components/StatesMenuList";
 import StateNewspapersTable from "./components/StateNewspapersTable";
 import SearchPage from "./pages/SearchPage";
+import NewspaperPage from "./pages/NewspaperPage";
 
 function App() {
   const [newspaperList, setNewspaperList] = useState({});
@@ -33,6 +35,17 @@ function App() {
       <header className="App-header">
         <Switch>
           <Route
+            path="/newspaper/:lccn"
+            render={props => {
+              return (
+                <LayoutSimple
+                  sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
+                  mainContent={<NewspaperPage {...props} />}
+                />
+              );
+            }}
+          ></Route>
+          <Route
             path="/state/:stateName"
             render={props => {
               return (
@@ -44,7 +57,7 @@ function App() {
             }}
           ></Route>
           <Route
-            path={["/search/:searchFilter", "/search"]}
+            path={["/search/:searchFilter"]}
             render={props => {
               return (
                 <LayoutSimple

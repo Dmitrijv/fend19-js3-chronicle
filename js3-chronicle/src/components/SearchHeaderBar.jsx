@@ -8,7 +8,7 @@ export default function SearchHeaderBar() {
   useEffect(() => {
     console.log("useEffect in SearchHeaderBar");
     console.log(searchFilter);
-    navigate(`/search/${searchFilter}`, { state: { searchFilter: searchFilter } });
+    // navigate(`/search/${searchFilter}`, { state: { searchFilter: searchFilter } });
   }, []);
 
   function onSearchbarKeyPress(event) {
@@ -16,7 +16,7 @@ export default function SearchHeaderBar() {
       //   window.location.href = `/search/${event.currentTarget.value}`;
       console.log(event.currentTarget.value);
       setSearchFilter(event.currentTarget.value);
-      navigate(`/search/${event.currentTarget.value}`, { replace: true });
+      //   navigate(`/search/${event.currentTarget.value}`, { replace: true });
       //   navigateByUrl(`/search/${event.currentTarget.value}`);
       //   history.push(`/search/${event.currentTarget.value}`);
       //adaw
