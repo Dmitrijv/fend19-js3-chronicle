@@ -70,7 +70,7 @@ function App() {
             }}
           ></Route>
           <Route
-            path={["/search/:searchFilter"]}
+            path={["/search/:searchFilter", "/search/"]}
             render={props => {
               return (
                 <LayoutSimple
