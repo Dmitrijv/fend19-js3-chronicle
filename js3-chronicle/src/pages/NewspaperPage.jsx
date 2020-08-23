@@ -64,7 +64,7 @@ export default function NewspaperPage(props) {
                     <td>{index}</td>
                     <td>{issue.date_issued}</td>
                     <td>
-                      <Link to={`/newspaper/issue/${issue.date_issued}`}>explore</Link>
+                      <Link to={`/newspaper/${newspaperData.lccn}/issue/${issue.date_issued}`}>explore</Link>
                     </td>
                   </tr>
                 );

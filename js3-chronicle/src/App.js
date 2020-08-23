@@ -14,6 +14,7 @@ import StatesMenuList from "./components/StatesMenuList";
 import StateNewspapersTable from "./components/StateNewspapersTable";
 import SearchPage from "./pages/SearchPage";
 import NewspaperPage from "./pages/NewspaperPage";
+import NewspaperIssuePage from "./pages/NewspaperIssuePage";
 
 function App() {
   const [newspaperList, setNewspaperList] = useState({});
@@ -34,6 +35,17 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Switch>
+          <Route
+            path="/newspaper/:lccn/issue/:dateIssued"
+            render={props => {
+              return (
+                <LayoutSimple
+                  sidebarContent={<StatesMenuList newspaperList={newspaperList} />}
+                  mainContent={<NewspaperIssuePage {...props} />}
+                />
+              );
+            }}
+          ></Route>
           <Route
             path="/newspaper/:lccn"
             render={props => {
