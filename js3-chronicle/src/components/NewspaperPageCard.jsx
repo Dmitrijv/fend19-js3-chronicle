@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import pdfLogo from "./../pdfLogo.svg";
 
@@ -12,14 +11,13 @@ export default function NewspaperPageCard({ pageNumber = 1, pageDataUrl = "googl
         setPagePdfUrl(result.pdf);
       });
   }
-
   useEffect(() => {
-    fetchPageDetails();
+    fetchPageDetails(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div className="card newspaper-page-card">
-      <a className="noStyle" href={pagePdfUrl} target="_blank">
+      <a className="noStyle" href={pagePdfUrl} target="_blank" rel="noopener noreferrer">
         <img className="card-img-top" src={pdfLogo} alt="pdf link to page" />
       </a>
       <div className="card-footer">

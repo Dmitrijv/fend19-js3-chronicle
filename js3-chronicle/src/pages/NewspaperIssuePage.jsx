@@ -18,7 +18,7 @@ export default function NewspaperIssuePage(props) {
   }
 
   useEffect(() => {
-    fetchNewspaperIssueData();
+    fetchNewspaperIssueData(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const paperTitle =

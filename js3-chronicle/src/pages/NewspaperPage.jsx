@@ -15,7 +15,7 @@ export default function NewspaperPage(props) {
   }
 
   useEffect(() => {
-    fetchNewspaperData();
+    fetchNewspaperData(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const newspaperIssues = newspaperData.issues !== undefined ? newspaperData.issues : [];
