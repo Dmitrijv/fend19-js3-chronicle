@@ -27,7 +27,7 @@ export default function NewspaperPage(props) {
         <div className="notice-container">
           <div className="notice notice-lg">
             <h4>
-              <strong>Title: </strong> {sanitizedNewspaperTitle}
+              <strong>Newspaper: </strong> {sanitizedNewspaperTitle}
             </h4>
           </div>
           <div className="notice notice-info">
