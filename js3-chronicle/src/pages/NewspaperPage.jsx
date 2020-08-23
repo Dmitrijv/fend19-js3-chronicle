@@ -18,7 +18,8 @@ export default function NewspaperPage(props) {
     fetchNewspaperData();
   }, []);
 
-  let newspaperIssues = newspaperData.issues ? newspaperData.issues : [];
+  const newspaperIssues = newspaperData.issues !== undefined ? newspaperData.issues : [];
+  const sanitizedNewspaperTitle = newspaperData.name !== undefined ? newspaperData.name.replace(" [volume]", "") : "";
 
   return (
     <div className="about-section ">
@@ -26,7 +27,7 @@ export default function NewspaperPage(props) {
         <div className="notice-container">
           <div className="notice notice-lg">
             <h4>
-              <strong>Title: </strong> {newspaperData.name}
+              <strong>Title: </strong> {sanitizedNewspaperTitle}
             </h4>
           </div>
           <div className="notice notice-info">
