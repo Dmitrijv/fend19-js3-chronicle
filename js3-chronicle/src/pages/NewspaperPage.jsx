@@ -47,7 +47,7 @@ export default function NewspaperPage(props) {
         </div>
 
         <div>
-          <h5>{newspaperData.issues ? newspaperData.issues.length : 0} recorded issues</h5>
+          <h5>{newspaperData.issues ? newspaperData.issues.length : 0} issues on record</h5>
           <table className="table table-striped table-sm">
             <thead>
               <tr>
@@ -58,13 +58,15 @@ export default function NewspaperPage(props) {
             </thead>
             <tbody>
               {newspaperIssues.map((issue, index) => {
-                index++;
+                const issueNumber = index + 1;
                 return (
                   <tr key={index}>
-                    <td>{index}</td>
+                    <td>{issueNumber}</td>
                     <td>{issue.date_issued}</td>
                     <td>
-                      <Link to={`/newspaper/${newspaperData.lccn}/issue/${issue.date_issued}`}>explore</Link>
+                      <Link to={`/newspaper/${newspaperData.lccn}/issue/${issue.date_issued}/${issueNumber}`}>
+                        explore
+                      </Link>
                     </td>
                   </tr>
                 );

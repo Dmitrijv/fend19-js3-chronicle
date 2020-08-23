@@ -36,7 +36,7 @@ function App() {
       <header className="App-header">
         <Switch>
           <Route
-            path="/newspaper/:lccn/issue/:dateIssued"
+            path="/newspaper/:lccn/issue/:dateIssued/:issueNumber"
             render={props => {
               return (
                 <LayoutSimple
