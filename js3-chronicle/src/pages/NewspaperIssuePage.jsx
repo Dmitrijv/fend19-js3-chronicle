@@ -41,7 +41,8 @@ export default function NewspaperIssuePage(props) {
               <strong>Date Issued: </strong> {dateIssued}
             </div>
           </div>
-          <br />
+        </div>
+        <div>
           <h5>{numberOfPages} pages on record</h5>
           <br />
           <NewspaperPageList pageList={newspaperIssueData.pages} />
