@@ -29,11 +29,6 @@ export default function SearchPage(props) {
     );
   }
 
-  const tbody = document.querySelector("tbody.newspaper-table-body");
-  if (tbody) {
-    tbody.innerHtml = "";
-  }
-
   return (
     <div className="about-section">
       <h5>
