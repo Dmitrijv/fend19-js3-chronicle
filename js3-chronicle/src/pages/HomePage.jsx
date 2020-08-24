@@ -20,6 +20,11 @@ export default function HomePage({ newspaperList = [] }) {
       <h5>
         API returned {newspaperList.length} newspaper records across {Object.keys(stateOccurrenceStats).length} states
       </h5>
+      <br />
+      <p>
+        Select a state on the sidebar menu to list all recorded newspapers for that state. It is also possible to search
+        for a specific newspaper by title substring.
+      </p>
       <p>
         Data is pulled from{" "}
         <a href="https://chroniclingamerica.loc.gov/about/api/#json-views">chroniclingamerica.loc.gov</a>.
@@ -28,11 +33,6 @@ export default function HomePage({ newspaperList = [] }) {
         Chronicling America provides access to information about historic newspapers and select digitized newspaper
         pages. For more information about the open source Chronicling America software please see the{" "}
         <a href="https://github.com/LibraryofCongress/chronam">LibraryOfCongress/chronam</a> GitHub site.
-      </p>
-
-      <p>
-        Select a state on the sidebar menu to list all recorded newspapers for that state. It is also possible to search
-        for a specific newspaper by title substring.
       </p>
     </div>
   );
