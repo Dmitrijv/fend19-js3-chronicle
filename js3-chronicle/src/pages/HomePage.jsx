@@ -1,10 +1,42 @@
 import React from "react";
+import { useEffect } from "react";
+import "react-bootstrap-table-next/dist/react-bootstrap-table2.min.css";
+import "react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css";
+import BootstrapTable from "react-bootstrap-table-next";
+import paginationFactory from "react-bootstrap-table2-paginator";
+
+const columns = [
+  {
+    dataField: "lccn",
+    text: "lccn",
+    classes: "small-column",
+    headerClasses: "small-column"
+  },
+  {
+    dataField: "title",
+    text: "title"
+  },
+  {
+    dataField: "state",
+    text: "state",
+    classes: "text-right",
+    headerClasses: "text-right"
+  }
+];
 
 export default function HomePage({ newspaperList = [] }) {
   // clear selected usa state if any exist
   [].forEach.call(document.querySelectorAll("nav.sidebar li.nav-item.active"), function(item) {
     item.classList.remove("active");
   });
+
+  useEffect(() => {
+    const tabl = document.querySelector("div.react-bootstrap-table table");
+    if (tabl) {
+      tabl.classList.remove("table-bordered");
+      tabl.classList.add("table-striped");
+    }
+  }, []);
 
   // map over all newspapers and build a dictionary of unique states with occurance counts as values
   let stateOccurrenceStats = newspaperList.reduce

@@ -14,7 +14,7 @@ export default function SearchPage(props) {
   if (searchFilter.length < MIN_SEARCH_FILTER_LENGTH) {
     return (
       <div className="about-section">
-        <div class="alert alert-danger" role="alert">
+        <div className="alert alert-danger" role="alert">
           search input must be at least {MIN_SEARCH_FILTER_LENGTH} characters
         </div>
       </div>

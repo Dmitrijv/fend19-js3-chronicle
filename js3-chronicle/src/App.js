@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import "./css/bootstrap.min.css";
-import "./css/dashboard.css";
 import "./css/notice.css";
 import "./css/masonry.css";
+import "./css/dashboard.css";
 import "./scss/App.scss";
 
 import LayoutSimple from "./pages/LayoutSimple";
