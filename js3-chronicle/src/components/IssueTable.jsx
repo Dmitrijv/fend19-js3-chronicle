@@ -6,29 +6,21 @@ import "react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 
-export default function NewspapersTable({ newspaperList }) {
+export default function IssueTable({ issueList = [], lccn }) {
   const columns = [
     {
       dataField: "index",
-      text: "#",
-      classes: "tiny-column",
-      headerClasses: "tiny-column"
+      text: "issue #"
     },
     {
-      dataField: "lccnLink",
-      text: "lccn",
-      classes: "small-column",
-      headerClasses: "small-column"
+      dataField: "date_issued",
+      text: "issue date"
     },
     {
-      dataField: "title",
-      text: "title"
-    },
-    {
-      dataField: "state",
-      text: "state",
-      classes: "text-right",
-      headerClasses: "text-right"
+      dataField: "issueLink",
+      text: "details",
+      classes: "text-center",
+      headerClasses: "text-center"
     }
   ];
 
@@ -48,28 +40,28 @@ export default function NewspapersTable({ newspaperList }) {
     sizePerPageList: [15]
   };
 
-  const lccnLinkFormatter = function(lccn) {
-    return <Link to={`/newspaper/${lccn}`}>{lccn}</Link>;
+  const issueLinkFormatter = function(lccn, date_issued, issueNumber) {
+    return <Link to={`/newspaper/${lccn}/issue/${date_issued}/${issueNumber}`}>explore</Link>;
   };
 
-  newspaperList = newspaperList.map((newspaper, index) => {
-    newspaper.index = index + 1;
-    newspaper.lccnLink = lccnLinkFormatter(newspaper.lccn);
-    newspaper.title = newspaper.title.replace(" [volume]", "");
-    return newspaper;
+  issueList = issueList.map((issue, index) => {
+    issue.index = index + 1;
+    issue.issueLink = issueLinkFormatter(lccn, issue.date_issued, issue.index);
+    return issue;
   });
 
   useEffect(() => {
     const tabl = document.querySelector("div.react-bootstrap-table table");
     if (tabl) {
       tabl.classList.replace("table-bordered", "table-striped");
+      tabl.classList.add("table-sm");
     }
   }, []);
 
   return (
     <BootstrapTable
-      keyField="lccn"
-      data={newspaperList}
+      keyField="index"
+      data={issueList}
       columns={columns}
       pagination={paginationFactory(pagnationOptions)}
     />

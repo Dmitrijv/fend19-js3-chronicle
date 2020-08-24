@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import FadeIn from "react-fade-in";
-import { Link } from "react-router-dom";
+import IssueTable from "../components/IssueTable";
 
 export default function NewspaperPage(props) {
   const lccn = props.match.params.lccn;
@@ -47,33 +47,9 @@ export default function NewspaperPage(props) {
         </div>
 
         <div>
-          <h5>{newspaperData.issues ? newspaperData.issues.length : 0} issues on record</h5>
-          <table className="table table-striped table-sm">
-            <thead>
-              <tr>
-                <th>Issue #</th>
-                <th>Issue Date</th>
-                <th>Details</th>
-              </tr>
-            </thead>
-            <tbody>
-              {newspaperIssues.map((issue, index) => {
-                const issueNumber = index + 1;
-                return (
-                  <tr key={`${newspaperData.lccn}-${issue.date_issued}-${issueNumber}`}>
-                    <td>{issueNumber}</td>
-                    <td>{issue.date_issued}</td>
-                    <td>
-                      <Link to={`/newspaper/${newspaperData.lccn}/issue/${issue.date_issued}/${issueNumber}`}>
-                        explore
-                      </Link>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          <h5>{newspaperIssues.length} issues on record</h5>
         </div>
+        <IssueTable issueList={newspaperIssues} lccn={newspaperData.lccn} />
       </FadeIn>
     </div>
   );

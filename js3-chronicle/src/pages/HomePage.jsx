@@ -5,25 +5,6 @@ import "react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.m
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 
-const columns = [
-  {
-    dataField: "lccn",
-    text: "lccn",
-    classes: "small-column",
-    headerClasses: "small-column"
-  },
-  {
-    dataField: "title",
-    text: "title"
-  },
-  {
-    dataField: "state",
-    text: "state",
-    classes: "text-right",
-    headerClasses: "text-right"
-  }
-];
-
 export default function HomePage({ newspaperList = [] }) {
   // clear selected usa state if any exist
   [].forEach.call(document.querySelectorAll("nav.sidebar li.nav-item.active"), function(item) {

@@ -11,6 +11,11 @@ export default function SearchPage(props) {
     ? props.newspaperList.filter(newspaper => newspaper.title.toLowerCase().includes(searchFilter))
     : [];
 
+  // remove active class from currently clicked menu item
+  [].forEach.call(document.querySelectorAll("nav.sidebar li.nav-item.active"), function(item) {
+    item.classList.remove("active");
+  });
+
   if (searchFilter.length < MIN_SEARCH_FILTER_LENGTH) {
     return (
       <div className="about-section">
