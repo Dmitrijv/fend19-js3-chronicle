@@ -1,5 +1,6 @@
 import React from "react";
 import NewspapersTable from "./../components/NewspapersTable";
+import { useEffect } from "react";
 
 const MIN_SEARCH_FILTER_LENGTH = 3;
 
@@ -26,6 +27,11 @@ export default function SearchPage(props) {
         </h5>
       </div>
     );
+  }
+
+  const tbody = document.querySelector("tbody.newspaper-table-body");
+  if (tbody) {
+    tbody.innerHtml = "";
   }
 
   return (

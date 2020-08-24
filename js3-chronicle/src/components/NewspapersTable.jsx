@@ -13,12 +13,12 @@ export default function NewspapersTable({ newspaperList }) {
             <th className="text-right">State</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="newspaper-table-body">
           {newspaperList.map((newspaper, index) => {
             const sanitizedNewspaperTitle = newspaper.title.replace(" [volume]", "");
             index++;
             return (
-              <tr key={newspaper.lccn}>
+              <tr key={`${newspaper.lccn}${index}`}>
                 <td>{index}</td>
                 <td>{sanitizedNewspaperTitle}</td>
                 <td>
