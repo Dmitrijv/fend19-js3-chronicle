@@ -35,6 +35,10 @@ export default function HomePage({ newspaperList = [] }) {
       </h5>
       <br />
       <p>
+        <strong>[NOTE]</strong> You need to enable "Access Control-Allow-Origin - Unblock" extension for json data to
+        load properly.
+      </p>
+      <p>
         Select a state on the sidebar menu to list all recorded newspapers for that state. It is also possible to search
         for a specific newspaper by title substring.
       </p>
