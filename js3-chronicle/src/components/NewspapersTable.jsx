@@ -14,7 +14,7 @@ const columns = [
     headerClasses: "tiny-column"
   },
   {
-    dataField: "lccn",
+    dataField: "lccnLink",
     text: "lccn",
     classes: "small-column",
     headerClasses: "small-column"
@@ -54,7 +54,7 @@ const lccnLinkFormatter = function(lccn) {
 export default function NewspapersTable({ newspaperList }) {
   newspaperList = newspaperList.map((newspaper, index) => {
     newspaper.index = index + 1;
-    newspaper.lccn = lccnLinkFormatter(newspaper.lccn);
+    newspaper.lccnLink = lccnLinkFormatter(newspaper.lccn);
     newspaper.title = newspaper.title.replace(" [volume]", "");
     return newspaper;
   });
