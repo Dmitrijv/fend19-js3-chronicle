@@ -1,8 +1,8 @@
 # FEND19 - JavaScript 3 - USA Chronicle
 
-![preview](/readme/usa-cronicle-preview-2.png)
+**[NOTE]** You need to enable "Access Control-Allow-Origin - Unblock" extension for json data to load properly.
 
-**NOTE** You need to enable "Access Control-Allow-Origin - Unblock" extension for json data to load properly.
+![preview](/readme/usa-cronicle-preview-2.png)
 
 USA Chronicle is a React app that displays newspaper archive data from [chroniclingamerica.loc.gov](https://chroniclingamerica.loc.gov/about/api/#json-views).
 
