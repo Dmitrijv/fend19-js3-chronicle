@@ -50,14 +50,28 @@ nav.sidebar div.sidebar-sticky .list-group-item {
   margin-bottom: 30px;
 }
 
-table.table-striped tbody tr:hover {
+/* side borders on hover
+table.table-striped tbody tr {
   //   background-color: #f5f5f5;
   //   text-decoration: underline;
   //   text-decoration-color: lightgray;
-  border-right: 2px solid #45abcd;
-  border-left: 3px solid #45abcd;
-  border-collapse: collapse;
+  border-right: 3px solid white;
+  border-left: 4px solid white;
+
+  &:hover {
+    border-right: 3px solid white;
+    border-left: 4px solid white;
+
+    td:last-child {
+      border-right: 3px solid#dee2e6;
+    }
+
+    td:first-child {
+      border-left: 4px solid #dee2e6;
+    }
+  }
 }
+*/
 
 .newspaper-page-card {
   //   max-width: 175px;
