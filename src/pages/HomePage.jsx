@@ -35,10 +35,6 @@ export default function HomePage({ newspaperList = [] }) {
       </h5>
       <br />
       <p>
-        <strong>[NOTE]</strong> You need to enable "Access Control-Allow-Origin - Unblock" extension for json data to
-        load properly.
-      </p>
-      <p>
         Select a state on the sidebar menu to list all recorded newspapers for that state. It is also possible to search
         for a specific newspaper by title substring.
       </p>
@@ -50,6 +46,10 @@ export default function HomePage({ newspaperList = [] }) {
         Chronicling America provides access to information about historic newspapers and select digitized newspaper
         pages. For more information about the open source Chronicling America software please see the{" "}
         <a href="https://github.com/LibraryofCongress/chronam">LibraryOfCongress/chronam</a> GitHub site.
+      </p>
+      <p>
+        <strong>[NOTE]</strong> You need to enable "Access Control-Allow-Origin - Unblock" extension for json data to
+        load properly.
       </p>
     </div>
   );
