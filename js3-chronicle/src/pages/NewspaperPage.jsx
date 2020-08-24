@@ -60,7 +60,7 @@ export default function NewspaperPage(props) {
               {newspaperIssues.map((issue, index) => {
                 const issueNumber = index + 1;
                 return (
-                  <tr key={index}>
+                  <tr key={`${newspaperData.lccn}-${issue.date_issued}-${issueNumber}`}>
                     <td>{issueNumber}</td>
                     <td>{issue.date_issued}</td>
                     <td>
