@@ -1,6 +1,6 @@
 # FEND19 - JavaScript 3 - USA Chronicle
 
-![preview](/readme/usa-cronicle-preivew.png)
+![preview](/readme/usa-cronicle-preview.png)
 
 USA Chronicle is a React app that displays newspaper archive data from [chroniclingamerica.loc.gov](https://chroniclingamerica.loc.gov/about/api/#json-views).
 
