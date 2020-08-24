@@ -6,6 +6,7 @@ https://chroniclingamerica.loc.gov/newspapers.json
 
 # todo for monday
 
+- fix search table bug
 - make newspaper issue page segment the table in to 500 item chunks
 - add state flags to the sidebar menu
 - fix plural/singular words that come after dynamic numbers
