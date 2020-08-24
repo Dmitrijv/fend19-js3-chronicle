@@ -18,7 +18,7 @@ export default function NewspapersTable({ newspaperList }) {
             const sanitizedNewspaperTitle = newspaper.title.replace(" [volume]", "");
             index++;
             return (
-              <tr key={`${newspaper.lccn}${index}`}>
+              <tr key={`${newspaper.lccn}-${index}`}>
                 <td>{index}</td>
                 <td>{sanitizedNewspaperTitle}</td>
                 <td>
