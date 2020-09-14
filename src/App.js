@@ -21,7 +21,7 @@ function App() {
   const [newspaperList, setNewspaperList] = useState({});
 
   function fetchNewspaperList() {
-    fetch("https://chroniclingamerica.loc.gov/newspapers.json", { mode: "cors", credentials: "include" })
+    fetch("https://chroniclingamerica.loc.gov/newspapers.json", { mode: "cors" })
       .then(res => res.json())
       .then(result => {
         setNewspaperList(result.newspapers);
